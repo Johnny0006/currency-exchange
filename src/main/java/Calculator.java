@@ -1,9 +1,7 @@
-import com.sun.security.auth.callback.TextCallbackHandler;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Currency;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
@@ -15,10 +13,14 @@ public class Calculator {
         this.exchangeRate = exchangeRate;
     }
 
-    public BigDecimal calculate(Currency currency, BigDecimal bigDecimal){
-        return bigDecimal.multiply(exchangeRate.get(currency)).setScale(2, RoundingMode.HALF_DOWN);
+    public BigDecimal calculate(Currency currency, BigDecimal bigDecimal) {
+        try {
+            return bigDecimal.multiply(exchangeRate.get(currency)).setScale(2, RoundingMode.HALF_DOWN);
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
-
 
     public Map<Currency, BigDecimal> getExchangeRate() {
         return exchangeRate;
