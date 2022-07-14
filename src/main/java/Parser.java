@@ -1,4 +1,3 @@
-import com.sun.javafx.collections.MappingChange;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -11,7 +10,6 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Currency;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class Parser {

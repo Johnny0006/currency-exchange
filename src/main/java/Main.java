@@ -1,13 +1,8 @@
-import org.xml.sax.SAXException;
 
-import javax.xml.parsers.ParserConfigurationException;
-import java.io.IOException;
 import java.math.BigDecimal;
-import java.math.MathContext;
 import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.Currency;
-import java.util.Locale;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
