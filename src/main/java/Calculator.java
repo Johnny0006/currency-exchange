@@ -15,8 +15,9 @@ public class Calculator {
 
     public BigDecimal calculate(Currency currency, BigDecimal bigDecimal) {
         try {
+            if(bigDecimal.compareTo(BigDecimal.valueOf(0))<0) throw new IllegalArgumentException("Only non-negative values allowed");
             return bigDecimal.multiply(exchangeRate.get(currency)).setScale(2, RoundingMode.HALF_DOWN);
-        } catch (NullPointerException e) {
+        } catch (IllegalArgumentException | NullPointerException e) {
             e.printStackTrace();
             return null;
         }
